@@ -1,7 +1,20 @@
 box: microsoft/dotnet:2.0.0-sdk
 build:
-  steps:
+  steps: 
     - script:
-        name: echo
+        name: restore
         code: |
-          echo "hello world!"
+          dotnet restore
+    - script:
+        name: build
+        code: |
+          dotnet build
+    - script:
+        name: publish
+        code: |
+          dotnet publish -o publish  
+    - script:
+        name: copy binary
+        code: |
+          cp -r . $WERCKER_OUTPUT_DIR/app 
+          cd $WERCKER_OUTPUT_DIR/app
