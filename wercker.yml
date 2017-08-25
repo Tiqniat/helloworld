@@ -25,4 +25,4 @@ deploy:
         password: $PASSWORD
         repository: tahirtiqniat/helloworld
         registry: https://registry.hub.docker.com
-        entrypoint: "/pipeline/source/app/docker_entrypoint.sh"
+
