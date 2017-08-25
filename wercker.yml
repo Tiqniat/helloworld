@@ -22,8 +22,8 @@ build:
 deploy:
   steps:
     - internal/docker-push:
-        username: $USERNAME
-        password: $PASSWORD
-        repository: tiqniat/helloworld
+        username: tahirtiqniat
+        password: Pl1nters
+        repository: tahirtiqniat/helloworld
         registry: https://registry.hub.docker.com
         entrypoint: "/pipeline/source/app/docker_entrypoint.sh"
