@@ -1,21 +1,26 @@
-box: microsoft/dotnet:2.0.0-sdk
-no-response-timeout: 10
+# This references a standard debian container from the
+# Docker Hub https://registry.hub.docker.com/_/debian/
+# Read more about containers on our dev center
+# http://devcenter.wercker.com/docs/containers/index.html
+box: debian
+# You can also use services such as databases. Read more on our dev center:
+# http://devcenter.wercker.com/docs/services/index.html
+# services:
+    # - postgres
+    # http://devcenter.wercker.com/docs/services/postgresql.html
+
+    # - mongo
+    # http://devcenter.wercker.com/docs/services/mongodb.html
+
+# This is the build pipeline. Pipelines are the core of wercker
+# Read more about pipelines on our dev center
+# http://devcenter.wercker.com/docs/pipelines/index.html
 build:
-  steps: 
+    # Steps make up the actions in your pipeline
+    # Read more about steps on our dev center:
+    # http://devcenter.wercker.com/docs/steps/index.html
+  steps:
     - script:
-        name: restore
+        name: echo
         code: |
-          dotnet restore
-    - script:
-        name: build
-        code: |
-          dotnet build
-    - script:
-        name: publish
-        code: |
-          dotnet publish -o publish  
-    - script:
-        name: copy binary
-        code: |
-          cp -r . $WERCKER_OUTPUT_DIR/app 
-          cd $WERCKER_OUTPUT_DIR/app
+          echo "hello world!"
