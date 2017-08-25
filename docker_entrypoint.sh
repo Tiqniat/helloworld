@@ -1,7 +1,7 @@
 #!/bin/bash
-cd /pipeline/source/app/publish
+cd /pipeline/source/app
 echo "starting"
 # mkdir /pipeline/source/app/publish/tmp
 # export TEMP=/pipeline/source/app/publish/tmp
-export TMPDIR=/pipeline/source/app/publish/tmp
+export TMPDIR=/pipeline/source/app
 dotnet helloworld.dll --server.urls=http://0.0.0.0:${PORT-"8080"}
