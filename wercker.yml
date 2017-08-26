@@ -25,4 +25,3 @@ deploy:
         password: $PASSWORD
         repository: tahirtiqniat/helloworld
         registry: https://registry.hub.docker.com
-
